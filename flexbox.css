@@ -53,10 +53,12 @@ img {
     color: #81d4a9;
     font-weight: bold;
     font-size: 1.2rem;
+    /* En este caso la propiedad transition le esta diciendo al css que en algún momento se presentará una cambio dentro del elemento, el cual se aplicará con el nombre de transform */
     transition: transform 0.3s ease;
 }
 
 .navegacion a:hover {
+    /* Aplico el cambio de escala */
     transform: scale(1.2);
     color: #f57c00;
     text-shadow: 5px 10px 15px gray;
@@ -64,11 +66,13 @@ img {
 
 
 .contenedor {
+    /* La propiedad display se define para el elemento padre, que lo transferirá a todos sus hijos de esta forma logro que cada elemento se distribuya como yo quiero */
     display: flex;
     min-height: 40vh;
     min-width: 100%;
     gap: 15px;
     margin-bottom: 2.5rem;
+    /* le doy un fondo para poder visualizarlo de mejor forma */
     background-color: rgba(111, 111, 111, 0.132);
 }
 
@@ -80,14 +84,16 @@ img {
     background-repeat: no-repeat;
     background-size: cover;
     border: 1px solid black;
-    min-height: 20vh;
+    min-height: 80vh;
     gap: .625rem;
-    flex: 1;
+    /* recordar que no tengo que usar nuevamente display porque este pertenece a su elemento padre, la propiedad flex recibe multiples valores, en este caso le pide que se adapte tanto como se lo permita su contenedor */
+    flex-grow: 1;
 }
 
 .derecha {
     display: flex;
     flex-direction: column;
+    /* nuevamente utilizo el border solo para identificar que cada elemenento este donde debería */
     border: 1px solid black;
     min-height: 40vh;
     gap: .625rem;
@@ -101,7 +107,7 @@ img {
     border: 1px solid black;
     min-height: 20vh;
     gap: .625rem;
-    flex: 1;
+    flex-grow: 1;
 
 }
 
