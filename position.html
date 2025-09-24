@@ -13,7 +13,7 @@
     <!-- El header se usa para hacer el encabezado de la pagina, ahi pondría el banner, la navegacion -->
     <header>
         <div class="encabezado">
-            <!-- De aqui en adelante todo ira con un -->
+            <!-- De aqui en adelante todo ira con una clase o un id para identificarlos y aplicarles estilos-->
             <div class="titulo">
                 <h1>Tarea sobre position CSS</h1>
             </div>
@@ -27,16 +27,30 @@
     <main>
         <div class="subtitulo">
             <h2>Bienvenidos a Medellín</h2>
-
-            <p id="parrfo1">Aqui tenemos una foto de <b>parque berrio</b> con algunos sitios que podemos identificar</p>
+            <!-- Es buena práctica nombrar como clase los elementos que pertenecen a un mismo grupo, mientras que una id debe ser unica para un elemmento del html -->
+            <p id="parrafo1">Aqui tenemos una foto de <b>parque berrio</b> con algunos sitios que podemos identificar</p>
             
             <ul id="instrucciones">
                 <li>Desliza el mouse sobre algunos de los elementos caracteristicos que identificamos en esta foto</li>
                 <li>Haz click sobre el elemento para acceder a mas información sobre este.</li>
             </ul>
+
+            <section class="elementos">
+                <h3>En la imagen podras encontrar los siguientes elementos:</h3>
+                <ul>
+                    <li>Edificio del café</li>
+                    <li>Metro de Medellín</li>
+                    <li>Estación del metro ParqueBerrio</li>
+                    <li>Palacio de la cultura Rafael Uribe Uribe</li>
+                </ul>
+            </section>
         </div>
+        <!-- aqui es donde incluiremos la imagen que queremos referenciar, la imagen no se pone en el documento html sino que se extraerá con el mismo codigo CSS esto me permite tener mejor control de la imagen y los elementos que quiero posicionar sobre ella  -->
         <div class="contenido">
             <div class="fondo">
+                <!--recordar que parte del trabajo es agregar un link una vez la propiedad hover (traducida como estar suspendido) se cumpla  -->
+                <!-- Recuerden: para agregar multiples elementos iguales, solo lo multiplicamos usando *, si queremos incluir de una vez la clase la agregamos con . seguido del nombre de la clase Ej: div.elemento*4 -->
+                 <!-- ctrl + alt + ⬇️ nos permite seleccionar varios elementos que estan en linea y escribir dentro de todos ellos -->
                 <a href="https://www.bing.com/images/search?q=torre+del+cafe+medellin&form=HDRSC3&first=1" target="_blank">
                     <div class="elemento uno"><span>Edificio del café</span></div>
                 </a>
@@ -53,6 +67,7 @@
         </div>
     </main>
     <footer>
+        <!-- Por último en el footer van los integrantes y sus correos -->
         <ul>
             <li>Integrantes:</li>
             <li>🤓Juan Pablo Castillo Rueda🤓, jcastillopa@cesde.net</li>

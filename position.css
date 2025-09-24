@@ -1,18 +1,22 @@
 * {
+    /* Segun nos explican en clase, el selector universal si lleva estos valores */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+/* Aqui tambien podemos usar alt + shift + A para agregar comentarios */
 
-
+/* cuando no hay un punto ni un numeral(#) significa que estamos haciendo referencia a un elemento html */
 body {
+    /* Uso el font-family desde aqui dado que no quiero agregar una fuenta nueva */
     margin-left: 2.5rem;
     margin-right: 2.5rem;
     font-family: 'Times New Roman', Times, serif;
     background-color: azure;
 
 }
-
+/* como mencioné en el html la imagen se insertará desde el css para controlarla mejor usando background-image: url(imagen);
+Es importante en este punto agregar la propiedad position: con el valor de relative, que indica que este elemento será relativo a todo el body del html y lo que pase con el se moverá según este, los demás valores dependeran de lo que busques */
 .encabezado {
     position: relative;
     background-image: url(src/images/banner.jpg);
@@ -24,17 +28,18 @@ body {
     height: 100%;
     min-height: 18.75rem;
 }
-
+/* Ahora coo quiero mover el titulo dentro de la imagen banner que he creado voy a darle una propiedad position con valor absolute para que este siempre se mueva segun el position: relative mas cercano en terminos de herencia que encuentre */
 .encabezado h1 {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    /* usando el transform se pueden aplicar muchos cambios dentro de los elementos, para este caso el translate esta desplazando el "cero" del encabezado h1 para garantizar que quedé en el centro, por defecto el cero sería arriba a la izquierda */
     color: white;
     font-size: 3rem;
     text-shadow: 2px 2px 4px #000000;
 }
-
+/* Recordar que hacemos referencia a las clases con el "." antes del nombre que le dimos a esta */
 .encabezado nav {
     position: absolute;
     bottom: 0;
@@ -51,6 +56,7 @@ body {
     display: inline-block;
 }
 
+/* :hover cuando vemos solo un colon ":" hacemos referencia a una pseudo-clase que es un estado en que se encuentra un elemento, como hover, active, etc */
 .encabezado nav a:hover {
     transform: scale(1.5);
 }
@@ -83,7 +89,7 @@ footer {
     margin-bottom: 1.875rem;
 }
 
-#parrfo1 {
+#parrafo1 {
     margin-top: 0.625rem;
     margin-bottom: 0.625rem;
     font-size: 1.2rem;
@@ -98,9 +104,26 @@ footer {
     list-style: none;
 }
 
+/* Cuando tenemos dos colon "::" hacemos referencia a un pseudo-elemento
+hacemos referencia a una parte concetra del elemento, por ejemplo before se usa para agregar un elemento antes del contenido */
 #instrucciones li::before {
-    content: "✔️"; /* Puedes usar cualquier símbolo o imagen */
-    margin-right: 0.5rem; /* Espacio entre el símbolo y el texto */
+    content: "✔️"; /* con esto estoy cambiando el simbolo de la lista, puedes usar cualquier símbolo o imagen */
+    margin-right: 0.5rem; 
+}
+
+.elementos {
+    margin-top: 1.875rem;
+    margin-bottom: 1.875rem;
+    font-size: 1rem;
+}
+
+.elementos ul {
+    text-align: left;
+    display: inline-block;
+    margin-top: 0.625rem;
+    margin-bottom: 0.625rem;
+    font-size: 1rem;
+    list-style: none;
 }
 
 .contenido {
@@ -138,7 +161,7 @@ footer {
     background-color: rgba(0, 0, 0, 0.382);
 }
 
-/* El texto oculto */
+/* El texto oculto, dado que quiero que el texto no este estorbando en la imagen hasta que pasas el mouse, encerre el texto en una etiqueta span, luego le di una opacity de 0 para hacerlo invisible  */
 .contenido .fondo .elemento span {
     opacity: 0;
     transition: opacity 0.5s ease;
@@ -148,11 +171,13 @@ footer {
 
 }
 
-/* Cuando pasas el mouse, aparece el texto */
+/* Cuando pasas el mouse, aparece el texto. Opacity toma valores entre 0 o 1*/
 .contenido .fondo .elemento:hover span {
-    opacity: 1;
+    opacity: 1; 
 }
 
+/* Ahora vamos a posicionar los elementos, para esto usamos top, bottom, left, right con valores en % */
+/* No es necesario ponerle a cada elemento un position:absolute ya que estos estan dentro de la clase  .fondo que ya tiene dicha propiedad, recordar que el código CSS siempre buscará el relative mas cercano en la jerarquía que tenga disponible */
 .contenido .fondo .uno {
     top: 12%;
     left: 17%;
