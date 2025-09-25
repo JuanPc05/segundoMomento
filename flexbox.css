@@ -84,7 +84,7 @@ img {
     background-repeat: no-repeat;
     background-size: cover;
     border: 1px solid black;
-    min-height: 80vh;
+    min-height: 200vh;
     gap: .625rem;
     /* recordar que no tengo que usar nuevamente display porque este pertenece a su elemento padre, la propiedad flex recibe multiples valores, en este caso le pide que se adapte tanto como se lo permita su contenedor */
     flex-grow: 1;
@@ -93,22 +93,35 @@ img {
 .derecha {
     display: flex;
     flex-direction: column;
+    position: relative;
     /* nuevamente utilizo el border solo para identificar que cada elemenento este donde debería */
     border: 1px solid black;
-    min-height: 40vh;
+    min-height: 20vh;
     gap: .625rem;
     margin-right: .625rem;
     width: 25%;
 }
 
 
-.item2,
-.item3 {
+/* .item2 {
+    position: sticky;
+    width: 100%;
     border: 1px solid black;
     min-height: 20vh;
+    background-image: url(src/images/Colombia_aqui-todo-florece.jpg);
     gap: .625rem;
     flex-grow: 1;
+} */
 
+.item2 {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 30vh;
+    min-height: unset;
+    background-image: url(src/images/Colombia_aqui-todo-florece.jpg);
+    background-size: cover;
+    background-position: center;
 }
 
 
