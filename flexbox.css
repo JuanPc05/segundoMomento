@@ -19,6 +19,7 @@
 }
 
 html { font-size: var(--base-font-size); }
+
 body {
 
     margin-left: 2.5rem;
@@ -95,6 +96,7 @@ img {
 .izquierda {
     border: 1px solid black;
     width: 60%;
+    padding-bottom: 3.125rem;
     background-repeat: no-repeat;
     background-size: cover;
     border: 1px solid black;
@@ -109,7 +111,7 @@ img {
     flex-direction: column;
     position: relative;
     /* nuevamente utilizo el border solo para identificar que cada elemenento este donde debería */
-    border: 1px solid black;
+  /*   border: 1px solid black; */
     min-height: 20vh;
     gap: .625rem;
     margin-right: .625rem;
@@ -127,6 +129,12 @@ img {
     background-image: url(src/images/Colombia_aqui-todo-florece.jpg);
     background-size: cover;
     background-position: center;
+}
+
+.derecha a {
+    font-size: 0.8rem;
+    color: white;
+    text-decoration: none;
 }
 
 

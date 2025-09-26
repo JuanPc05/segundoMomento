@@ -5,14 +5,14 @@
     box-sizing: border-box;
 }
 /* Aqui tambien podemos usar alt + shift + A para agregar comentarios */
-
+html { font-size: var(--base-font-size); }
 /* cuando no hay un punto ni un numeral(#) significa que estamos haciendo referencia a un elemento html */
 body {
     /* Uso el font-family desde aqui dado que no quiero agregar una fuenta nueva */
     margin-left: 2.5rem;
     margin-right: 2.5rem;
     font-family: 'Times New Roman', Times, serif;
-    background-color: azure;
+    background-image: url(src/images/background.jpg);
 
 }
 /* como mencioné en el html la imagen se insertará desde el css para controlarla mejor usando background-image: url(imagen);
