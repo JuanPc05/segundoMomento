@@ -5,11 +5,26 @@
     box-sizing: border-box;
 }
 
+/* Variables para ajustar tamaños fácilmente */
+:root {
+    --subtitulo-font-size: 2.8rem; /* tamaño del texto en .subtitulo */
+    --avatar-size: 300px;       /* tamaño del avatar en .subtitulo .hijo2 img */
+    --parrafo-bg-color: rgba(0, 0, 0, 0.623); /* fondo negro casi opaco */
+    --parrafo-padding: 1rem;
+    --parrafo-font-size: 1.25rem;
+    --imagen-opacity: 0.5;
+    --parrafo-text-color: #ffffff;
+    --imagen-border-color: #000000;
+    --base-font-size: 18px;
+}
+
+html { font-size: var(--base-font-size); }
 body {
 
     margin-left: 2.5rem;
     margin-right: 2.5rem;
     font-family: 'Times New Roman', Times, serif;
+    background-image: url(src/images/background.jpg);
 
 }
 
@@ -50,9 +65,9 @@ img {
 
 .navegacion a {
     text-decoration: none;
-    color: #81d4a9;
+    color: #03110a;
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     /* En este caso la propiedad transition le esta diciendo al css que en algún momento se presentará una cambio dentro del elemento, el cual se aplicará con el nombre de transform */
     transition: transform 0.3s ease;
 }
@@ -79,12 +94,11 @@ img {
 
 .izquierda {
     border: 1px solid black;
-    width: 75%;
-    background-image: url(src/images/background.jpg);
+    width: 60%;
     background-repeat: no-repeat;
     background-size: cover;
     border: 1px solid black;
-    min-height: 200vh;
+    min-height: 150vh;
     gap: .625rem;
     /* recordar que no tengo que usar nuevamente display porque este pertenece a su elemento padre, la propiedad flex recibe multiples valores, en este caso le pide que se adapte tanto como se lo permita su contenedor */
     flex-grow: 1;
@@ -103,15 +117,6 @@ img {
 }
 
 
-/* .item2 {
-    position: sticky;
-    width: 100%;
-    border: 1px solid black;
-    min-height: 20vh;
-    background-image: url(src/images/Colombia_aqui-todo-florece.jpg);
-    gap: .625rem;
-    flex-grow: 1;
-} */
 
 .item2 {
     position: sticky;
@@ -133,4 +138,92 @@ footer {
     background-color: rgba(111, 111, 111, 0.589);
     color: antiquewhite;
     padding: 1.875rem;
+}
+
+
+
+.contenidos {
+   display: flex;
+   gap: 15px;
+   justify-content: center;
+   align-items: center;
+   margin-top: 40px;
+   margin-bottom: 40px;
+    flex-wrap: wrap;
+
+}
+
+
+.imagen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1.25rem;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(26, 22, 22, 0.405);
+}
+
+
+.subtitulo {
+    /* Hacer que subtítulo apile su contenido en forma vertical */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 1.25rem;
+    font-size: var(--subtitulo-font-size);
+    color: #444;
+    gap: 0.75rem;
+    font-weight: 700; /* letras más gruesas */
+}
+
+.subtitulo .hijo1,
+.subtitulo .hijo2,
+.subtitulo .hijo3 {
+    width: 100%;
+}
+
+.subtitulo .hijo1 {
+    color: #5f9c53;
+    font-weight: 700;
+}
+
+.subtitulo .hijo2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.subtitulo .hijo2 img {
+    border-radius: 50%;
+    width: var(--avatar-size);
+    max-width: 90%;
+    height: auto;
+    border: 2px solid var(--imagen-border-color);
+    display: block;
+    opacity: var(--imagen-opacity);
+}
+
+.imagen img {
+    opacity: var(--imagen-opacity);
+}
+
+.subtitulo .hijo3 {
+    color: #5f9c53;
+    text-align: center;
+    font-weight: 700;
+}
+
+/* Nota: se eliminó el media query para forzar siempre la disposición vertical de .subtitulo */
+
+.parrafo {
+    text-align: justify;
+    font-size: var(--parrafo-font-size);
+    margin: 1.25rem;
+    line-height: 1.6;
+    color: var(--parrafo-text-color);
+    background: var(--parrafo-bg-color);
+    padding: var(--parrafo-padding);
+    border-radius: 8px;
 }
